@@ -92,7 +92,7 @@ end
 
 --Main
 
-Main:CreateDivider("Main")
+
 
 Main:CreateDropdown("Selected Word", getWorlds(), function(Worlds)
     SelectedWorlds = Worlds
@@ -183,7 +183,7 @@ end)
 --Egg
 
 
-Egg:CreateDivider("Egg")
+
 
 
 Egg:CreateDropdown("Selected Egg", getEggs(), function(Eggs)
@@ -231,7 +231,7 @@ end)
 
 
 --Give
-Give:CreateDivider("Give")
+
 
 Give:CreateLabel("Warning", "Warning!, there could be a risk isk!!")
 
@@ -340,7 +340,7 @@ end)
 
 local TextLabel = Instance.new("TextLabel")
 
-TextLabel.Parent = game:GetService("CoreGui").FATALITY
+TextLabel.Parent = game:GetService("CoreGui").DumbHubUI
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BackgroundTransparency = 1.000
 TextLabel.Position = UDim2.new(0.0745672435, 0, 0.0299251862, 0)
@@ -367,7 +367,7 @@ RunService:BindToRenderStep("UpdateInfo", 1000, function()
 		for i = 1, #FPSAverage do
 			sum = sum + FPSAverage[i]
 		end
-		game:GetService("CoreGui").FATALITY.FPStext.Text = "FPS: " .. tostring(fps) .. " Average: " .. string.format("%.0f", (sum / #FPSAverage))
+		game:GetService("CoreGui").DumbHubUI.FPStext.Text = "FPS: " .. tostring(fps) .. " Average: " .. string.format("%.0f", (sum / #FPSAverage))
 		if (tick() - LastTick) >= 15 then
 			FPSAverage = { }
 			LastTick = tick()
@@ -378,7 +378,7 @@ end)
 
 
 Misc:CreateButton("Show/Hide FPS Counter", function()
-	game:GetService("CoreGui").FATALITY.FPStext.Visible = not game:GetService("CoreGui").FATALITY.FPStext.Visible
+	game:GetService("CoreGui").DumbHubUI.FPStext.Visible = not game:GetService("CoreGui").DumbHubUI.FPStext.Visible
 	Ticking = not Ticking
 end)
 
